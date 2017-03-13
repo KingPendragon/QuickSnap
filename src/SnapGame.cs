@@ -25,8 +25,31 @@ namespace CardGames
 
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
-				myGame.Start ();
+                myGame.Start();
+                myGame.FlipNextCard ();
 			}
+
+            if (myGame.IsStarted)
+            {
+                if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT) &&
+                     SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    SwinGame.LoadSoundEffectNamed("Explosion", "Explosion.wav");
+                    SwinGame.PlaySoundEffect("Explosion");
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT))
+                {
+                    myGame.PlayerHit (0);
+                    SwinGame.LoadSoundEffectNamed("Slap", "slap.wav");
+                    SwinGame.PlaySoundEffect("Slap");
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    myGame.PlayerHit (1);
+                    SwinGame.LoadSoundEffectNamed("Slap", "slap.wav");
+                    SwinGame.PlaySoundEffect("Slap");
+                }
+            }
 		}
 
 		/// <summary>
