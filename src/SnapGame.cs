@@ -67,10 +67,18 @@ namespace CardGames
 			Card top = myGame.TopCard;
 			if (top != null)
 			{
+<<<<<<< HEAD
 				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.Yellow, 0, 50);
 				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.Green, 0, 80);
 				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.Green, 0, 90);
 				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 350, 50);
+=======
+				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.Blue, 0, 70);
+				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.Orange, "GameFont",0, 100);
+				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.Orange, "GameFont",0, 110);
+
+				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 521, 150);
+>>>>>>> add-background-image
 			}
 			else
 			{
